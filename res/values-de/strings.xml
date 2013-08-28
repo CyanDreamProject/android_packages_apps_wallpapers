@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 ParanoidAndroid Project
+
+     Licensed under the GNU GPLv2 license
+
+     The text of the license can be found in the LICENSE file
+     or at https://www.gnu.org/licenses/gpl-2.0.txt
+-->
+
+<resources>
+
+    <string name="app_name">CyanDream Wallpapers</string>
+    <string name="solid_color">Solide farbe</string>
+    <string name="pick_color">Farbe wählen</string>
+    <string name="red">Rot<string>
+    <string name="green">Grün</string>
+    <string name="blue">Blau</string>
+    <string name="purple">Violett</string>
+    <string name="orange">Orange</string>
+    <string name="white">weiß</string>
+    <string name="black">schwarz</string>
+    <string name="action_apply">akzeptieren</string>
+    <string name="applying">Bild wie Hintergrund setzen..</string>
+
+</resources>
