@@ -8,7 +8,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cyandream.wallpapers">
+    package="com.cyandream.CyanDreamWallpapers">
     
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     
