@@ -7,7 +7,7 @@
  * or at https://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-package com.paranoid.ParanoidWallpapers;
+package com.cyandream.wallpapers;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -46,8 +46,7 @@ import java.util.ArrayList;
 
 @SuppressLint("ParserError")
 public class Wallpaper extends FragmentActivity {
-
-	
+   
     /**
      * Menu item used for "Apply" button on actionbar.
      */
@@ -94,31 +93,13 @@ public class Wallpaper extends FragmentActivity {
     /**
      * The {@link Boolean} that stores if current item is customizable.
      */
-    boolean mCustomizable = false;
-    int lol = 0;
+    boolean mCustomizable = true;
+
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        //start new stuff
-
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setTitle("Chromium's Wallpapers");
-        builder1.setMessage(getString(R.string.about));
-        builder1.setCancelable(true);
-        builder1.setNeutralButton(getString(R.string.cont),
-                new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.cancel();
-            }
-        });
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-        //end new stuff
-        
         // Create the adapter that will return a fragment for each of the three primary sections
         // of the app.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -263,12 +244,12 @@ public class Wallpaper extends FragmentActivity {
         return super.onPrepareOptionsMenu(menu);
     }
     
-     @Override
-      public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         final WallpaperLoader loader = new WallpaperLoader();
         switch (item.getItemId()) {
             case MENU_APPLY:
-                if(lol == 1) {
+                if(mCustomizable) {
                     final CharSequence[] items = getResources()
                             .getStringArray(R.array.customize_colors);
                     int resId = mWallpapers.get(mCurrentFragment);
@@ -277,7 +258,7 @@ public class Wallpaper extends FragmentActivity {
                     final Bitmap stockBitmap = ((BitmapDrawable)d)
                             .getBitmap();
 
-                  AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     builder.setTitle(getString(R.string.pick_color));
                     builder.setItems(items, new DialogInterface.OnClickListener() {
                         @Override
@@ -297,7 +278,7 @@ public class Wallpaper extends FragmentActivity {
                                 case 3:
                                     setColor = false;
                                     break;
-                            } 
+                            }
                             
                             loader.setBitmap(setColor ?
                                     getColoredBitmap(stockBitmap, color) :
@@ -317,7 +298,7 @@ public class Wallpaper extends FragmentActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    } 
+    }
 
     private Bitmap getColoredBitmap(Bitmap src, int color){
         int width = src.getWidth();
@@ -337,9 +318,8 @@ public class Wallpaper extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
          menu.add(Menu.NONE, MENU_APPLY, 0, R.string.action_apply)
-                 .setIcon(android.R.drawable.ic_menu_slideshow)
+                 .setIcon(android.R.drawable.ic_menu_set_as)
                  .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
          return super.onCreateOptionsMenu(menu);
     }
-
 }

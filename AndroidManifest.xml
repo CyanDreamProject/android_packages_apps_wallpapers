@@ -5,9 +5,6 @@
 
      The text of the license can be found in the LICENSE file
      or at https://www.gnu.org/licenses/gpl-2.0.txt
-	 
-	 * This has been re-modified by the CyanDream Project. *  
-You won't see that anywhere else, that text above here. We're sorry.
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,11 +19,9 @@ You won't see that anywhere else, that text above here. We're sorry.
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-         >
-        
+        android:theme="@style/AppTheme" >
         
         <activity
-            android:theme="@style/Theme.MyAppTheme"
             android:name="Wallpaper"
             android:label="@string/app_name"
             android:icon="@drawable/ic_launcher"
@@ -35,12 +30,18 @@ You won't see that anywhere else, that text above here. We're sorry.
             <intent-filter>
                 <action android:name="android.intent.action.SET_WALLPAPER" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
-
+        <activity
+            android:name="SolidColor"
+            android:label="@string/solid_color"
+            android:icon="@drawable/solid_color" >
+            <intent-filter>
+                <action android:name="android.intent.action.SET_WALLPAPER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         
     </application>
 

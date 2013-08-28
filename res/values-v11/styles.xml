@@ -9,6 +9,6 @@
 
 <resources>
 
-    <style name="AppTheme" parent="android:Theme.Holo.Dark" />
+    <style name="AppTheme" parent="android:Theme.Holo.Light" />
 
 </resources>

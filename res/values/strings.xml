@@ -9,7 +9,7 @@
 
 <resources>
 
-    <string name="app_name">"CyanDream Wallpapers"</string>
+    <string name="app_name">CyanDream Wallpapers</string>
     <string name="solid_color">Solid color</string>
     <string name="pick_color">Pick a color</string>
     <string name="red">Red</string>
@@ -20,9 +20,6 @@
     <string name="white">White</string>
     <string name="black">Black</string>
     <string name="action_apply">Apply</string>
-    <string name="applying">Applying...Please Wait</string>
-    <string name="about">Original source code from Paranoid Android, released under the GPL v3. Wallpapers by Priyesh Patel. App modified by Rinse Meetsma for the CyanDream project.</string>
-    <string name="cont">Continue to App</string>
-    
+    <string name="applying">Applying selected wallpaper</string>
 
 </resources>
